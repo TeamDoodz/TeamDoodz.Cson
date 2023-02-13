@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamDoodz.Cson", "TeamDoodz.Cson\TeamDoodz.Cson.csproj", "{9F8DC388-03FE-4A91-805A-F61FD4C575BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamDoodz.Cson.Example", "TeamDoodz.Cson.Example\TeamDoodz.Cson.Example.csproj", "{C9ECDAD8-5737-4F08-9D0D-3163398C47A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F8DC388-03FE-4A91-805A-F61FD4C575BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8DC388-03FE-4A91-805A-F61FD4C575BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8DC388-03FE-4A91-805A-F61FD4C575BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8DC388-03FE-4A91-805A-F61FD4C575BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9ECDAD8-5737-4F08-9D0D-3163398C47A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9ECDAD8-5737-4F08-9D0D-3163398C47A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9ECDAD8-5737-4F08-9D0D-3163398C47A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9ECDAD8-5737-4F08-9D0D-3163398C47A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {648D3015-17C9-497C-BE92-646AD5DD48F3}
+	EndGlobalSection
+EndGlobal

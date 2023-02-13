@@ -1,0 +1,62 @@
+grammar CsonGrammar;
+
+/*
+ Parser
+*/
+
+document: using_statements object EOF;
+
+identifier: SIMPLE_IDENTIFIER ;
+
+namespace_name: type_or_namespace_name ;
+type_name: type_or_namespace_name ;
+type_or_namespace_name: identifier 
+                      | type_or_namespace_name DOT identifier
+                      ;
+
+using_statement: KEYWORD_USING namespace_name SEMICOLON ;
+using_statements: using_statement* ;
+
+object: non_null_object
+      | null_object 
+      ;
+non_null_object: type_name object_initializer SEMICOLON ;
+null_object: LITERAL_NULL SEMICOLON ;
+
+object_initializer: string_literal
+                  | int_literal
+                  | float_literal
+                  ;
+
+key_value_initializer: OPEN_BRACKET key_value_pair* CLOSE_BRACKET ;
+key_value_pair: identifier EQUAL object_initializer ;
+
+string_literal: LITERAL_STRING ;
+int_literal: LITERAL_INT ;
+float_literal: LITERAL_FLOAT ;
+
+/*
+ Lexer
+*/
+
+DOT: '.' ;
+SEMICOLON: ';' ;
+OPEN_BRACKET: '{';
+CLOSE_BRACKET: '}';
+EQUAL: '=';
+
+LITERAL_STRING: UNTERMINATED_LITERAL_STRING '"' ;
+LITERAL_INT: NUMBER ;
+LITERAL_FLOAT: NUMBER (DOT NUMBER)? 'f' ;
+LITERAL_NULL: 'null' ;
+
+NUMBER: [0-9]+ ;
+
+UNTERMINATED_LITERAL_STRING: '"' (~["\\\r\n] | '\\' (. | EOF))* ;
+
+KEYWORD_USING: 'using' ;
+
+SIMPLE_IDENTIFIER: [a-zA-Z_] [a-zA-Z0-9_-]* ;
+
+//TODO: Properly match whitespace
+WHITESPACE: (' ' | '\t' | '\n') -> skip ;
